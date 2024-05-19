@@ -1,0 +1,25 @@
+:root{
+    --dark-blueish: #167d92;
+    --light-blueish: #dcf9ff;
+    --light: rgb(247, 247, 247);
+}
+body{
+    background-color: var(--light);
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--light-blueish);
+    color: var(--dark-blueish);
+    width: 100%;
+    padding: 10px;
+}
+.weather-icon{
+       width: 120px;
+       margin-top:10px;
+}
+.dark-teal{
+    background-color: var(--dark-blueish);
+    color: var(--light);
+}
