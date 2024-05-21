@@ -30,4 +30,19 @@ async function getWeather(city){
 }
 searchBtn.addEventListener("click", ()=>{
     getWeather(searchInput.value);
-} )
+} );
+
+// create a function to update the date and time
+function updateDate() {
+    const now = new Date();
+    // const currentDate = now.toLocaleString();
+
+    var dd = now.getDate(); 
+    var mm = now.getMonth() + 1; 
+    var yyyy = now.getFullYear(); 
+    var newDate = dd + "-" + mm + "-" +yyyy; 
+
+    document.querySelector('.date').textContent = newDate;
+  }
+
+  setInterval(updateDate, 1000);
