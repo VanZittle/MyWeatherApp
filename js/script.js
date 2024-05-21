@@ -4,19 +4,33 @@ const searchInput = document.querySelector(".input-group input");
 const searchBtn = document.querySelector(".input-group button");
 const tempIcon = document.querySelector(".temp-icon");
 
+//if a user uses keyboard "Enter", it will work just like the Click
+searchInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      getWeather(searchInput.value);
+    }else{
+        searchBtn.addEventListener("click", ()=>{
+        getWeather(searchInput.value);
+        } )
+    }
+  });
+
 
 async function getWeather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-    let data = await response.json();
-
-    console.log(data);
+    //if the city name is not recognized, a message will be displayed
+    if(response.status == 404){
+        document.querySelector(".no-city").style.display = "block";
+        document.querySelector(".current-data").style.display = "none";
+    } else {
+        let data = await response.json();
 
     document.querySelector('.city-name').innerHTML = data.name;
     document.querySelector('.temp-num').innerHTML = Math.round(data.main.temp) + "°c";
     document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
     document.querySelector('.wind-speed').innerHTML = data.wind.speed + " km/h";
     document.querySelector('.temp-icon').innerHTML = data.weather.main + " km/h";
-
+//depending on the information of each city, the weather icon will change
     if (data.weather[0].main === "Clouds"){
         tempIcon.src = "assets/scatteredClouds.svg";
     }else if (data.weather[0].main === "Clear"){
@@ -26,23 +40,32 @@ async function getWeather(city){
     }else if (data.weather[0].main === "Drizzle"){
         tempIcon.src = "assets/rainShowers.svg";
     }else if (data.weather[0].main === "Mist"){
-        tempIcon.src = "assets/mist.svg";}
+        tempIcon.src = "assets/mist.svg";
+    }
+    //make first column hide at first, only appears when entering a city
+    document.querySelector(".current-data").style.display = "block";
+    //removes the "invalid city name" text if the city is correct
+    document.querySelector(".no-city").style.display = "none";
 }
-searchBtn.addEventListener("click", ()=>{
-    getWeather(searchInput.value);
-} );
+    }
+    
+// searchBtn.addEventListener("click", ()=>{
+//     getWeather(searchInput.value);
+// } )
+;
 
-// create a function to update the date and time
+
+
+
+// function to get the current date
 function updateDate() {
     const now = new Date();
-    // const currentDate = now.toLocaleString();
 
-    var dd = now.getDate(); 
-    var mm = now.getMonth() + 1; 
-    var yyyy = now.getFullYear(); 
-    var newDate = dd + "-" + mm + "-" +yyyy; 
+    const dd = now.getDate(); 
+    const mm = now.getMonth() + 1; 
+    const yyyy = now.getFullYear(); 
+    const newDate = dd + "-" + mm + "-" +yyyy; 
 
     document.querySelector('.date').textContent = newDate;
   }
-
   setInterval(updateDate, 1000);

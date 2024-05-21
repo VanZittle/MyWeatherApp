@@ -26,3 +26,11 @@ footer{
 .container{
     max-width: 100%;
 }
+.current-data{
+    display: none;
+}
+.no-city{
+    text-align: left;
+    margin-left: 10px;
+    display: none;
+}

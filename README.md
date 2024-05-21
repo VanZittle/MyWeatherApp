@@ -1,6 +1,6 @@
 # module6challenge-Vanessa-WeatherApp
 
-This is an app that anyone can reach out to check on weather forecast by adding any city of their interest. The user can get real-time, accurate weather information as well as the next 5 days data. To develop this challenge, I reached out to previous activities during the course, the API weather documentation and the recommended blog in the instructions of the challenge.
+This is an app that anyone can reach out to check on weather forecast by adding any city of their interest. The user can get real-time, accurate weather information as well as the next 5 days data. To develop this challenge, I reached out to previous activities during the course, the API weather documentation, the recommended blog in the instructions of the challenge and W3Schools to know how to display the date.
 
 ## User story
 
