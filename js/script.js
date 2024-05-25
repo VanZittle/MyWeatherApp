@@ -46,20 +46,20 @@ const renderData = function(dataObj){
     document.querySelector('.temp-icon').innerHTML = dataList[0].weather.main + " km/h";
 //depending on the information of each city, the weather icon will change
 tempIcon.src = `https://openweathermap.org/img/wn/${dataList[0].weather[0].icon}@2x.png`;
-    // if (dataList[0].weather[0].main === "Clouds"){
-    // }else if (dataList[0].weather[0].main === "Clear"){
-    //     tempIcon.src = "assets/clear.svg";
-    // }else if (dataList[0].weather[0].main === "Rain"){
-    //     tempIcon.src = "assets/rain.svg";
-    // }else if (dataList[0].weather[0].main === "Drizzle"){
-    //     tempIcon.src = "assets/rainShowers.svg";
-    // }else if (dataList[0].weather[0].main === "Mist"){
-    //     tempIcon.src = "assets/mist.svg";
-    // }
+    if (dataList[0].weather[0].main === "Clouds"){
+    }else if (dataList[0].weather[0].main === "Clear"){
+        tempIcon.src = "assets/clear.svg";
+    }else if (dataList[0].weather[0].main === "Rain"){
+        tempIcon.src = "assets/rain.svg";
+    }else if (dataList[0].weather[0].main === "Drizzle"){
+        tempIcon.src = "assets/rainShowers.svg";
+    }else if (dataList[0].weather[0].main === "Mist"){
+        tempIcon.src = "assets/mist.svg";
+    }
     //make first column hide at first, only appears when entering a city
-    // document.querySelector(".current-data").style.display = "block";
+    document.querySelector(".current-data").style.display = "block";
     // //removes the "invalid city name" text if the city is correct
-    // document.querySelector(".no-city").style.display = "none";
+    document.querySelector(".no-city").style.display = "none";
 }
 
 const getWeather = function (city){
