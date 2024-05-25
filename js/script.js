@@ -3,6 +3,7 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/forecast?units=metric&q=
 const searchInput = document.querySelector(".input-group input");
 const searchBtn = document.querySelector(".input-group button");
 const tempIcon = document.querySelector(".temp-icon");
+const forecastDiv = document.querySelector("#forecast-div");
 
 //if a user uses keyboard "Enter", it will work just like the Click
 searchBtn.addEventListener("click", ()=>{
@@ -14,9 +15,7 @@ searchInput.addEventListener("keypress", function(event) {
     }
   });
 
-
-
-  const renderData = function(dataObj){
+const renderData = function(dataObj){
     const dataList = dataObj.list;
     console.log(dataList);
     let i = 2;
@@ -39,7 +38,7 @@ searchInput.addEventListener("keypress", function(event) {
         forecastDiv.innerHTML += forecastCard;
         i++;
     }
-   
+
     document.querySelector('.city-name').innerHTML = dataObj.city.name;
     document.querySelector('.temp-num').innerHTML = Math.round(dataList[0].main.temp) + "°c";
     document.querySelector('.humidity').innerHTML = dataList[0].main.humidity + "%";
@@ -47,24 +46,22 @@ searchInput.addEventListener("keypress", function(event) {
     document.querySelector('.temp-icon').innerHTML = dataList[0].weather.main + " km/h";
 //depending on the information of each city, the weather icon will change
 tempIcon.src = `https://openweathermap.org/img/wn/${dataList[0].weather[0].icon}@2x.png`;
-    
-    // if (data.weather[0].main === "Clouds"){
-    //     tempIcon.src = "assets/scatteredClouds.svg";
-    // }else if (data.weather[0].main === "Clear"){
+    // if (dataList[0].weather[0].main === "Clouds"){
+    // }else if (dataList[0].weather[0].main === "Clear"){
     //     tempIcon.src = "assets/clear.svg";
-    // }else if (data.weather[0].main === "Rain"){
+    // }else if (dataList[0].weather[0].main === "Rain"){
     //     tempIcon.src = "assets/rain.svg";
-    // }else if (data.weather[0].main === "Drizzle"){
+    // }else if (dataList[0].weather[0].main === "Drizzle"){
     //     tempIcon.src = "assets/rainShowers.svg";
-    // }else if (data.weather[0].main === "Mist"){
+    // }else if (dataList[0].weather[0].main === "Mist"){
     //     tempIcon.src = "assets/mist.svg";
     // }
     //make first column hide at first, only appears when entering a city
     // document.querySelector(".current-data").style.display = "block";
     // //removes the "invalid city name" text if the city is correct
     // document.querySelector(".no-city").style.display = "none";
-}   
-    
+}
+
 const getWeather = function (city){
     const url = apiUrl + city + `&appid=${apiKey}`;
 
@@ -80,14 +77,7 @@ const getWeather = function (city){
     })
     
 }  
-; 
-// searchBtn.addEventListener("click", ()=>{
-//     getWeather(searchInput.value);
-// } )
 ;
-
-
-
 
 // function to get the current date
 function updateDate() {
