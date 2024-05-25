@@ -30,6 +30,7 @@ async function getWeather(city){
     document.querySelector('.humidity').innerHTML = data.main.humidity + "%";
     document.querySelector('.wind-speed').innerHTML = data.wind.speed + " km/h";
     document.querySelector('.temp-icon').innerHTML = data.weather.main + " km/h";
+    
 //depending on the information of each city, the weather icon will change
     if (data.weather[0].main === "Clouds"){
         tempIcon.src = "assets/scatteredClouds.svg";

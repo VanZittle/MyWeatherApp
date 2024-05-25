@@ -35,6 +35,7 @@
                                     <p>wind speed</p>
                                 </div>
                             </div>
+                            <!-- https://api.openweathermap.org/data/2.5/weather?units=metric&q=toronto&appid=60a59bb5891fc5ad6bd41fd0ce3f8265 -->
                         </div>
                     </div>
                 </div>
@@ -48,69 +49,8 @@
                     <div class="no-city"><p>Please add a valid city name</p></div>
                     <div class="container 5-day-weather-content">
                         <h3 class="lead py-4">Forecast</h3>
-                        <div class="row">
-                            <div class="col mb-3 mb-sm-0">
-                              <div class="card">
-                                <div class="card-body">
-                                  <h5 class="day1 card-title">Day 1</h5>
-                                  <img src="" alt="weather icon" class="temp-icon-1 my-2">
-                                  <h5 class="temp-num1 card-text">°c</h5>
-                                  <p class="card-text"><i class="fa-solid fa-droplet"></i><span class="humidity-1"></span>%</p>
-                                  <p class="card-text"><i class="fa-solid fa-wind"></i><span class="wind-speed-1"></span>km/h</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="col">
-                              <div class="card">
-                                <div class="card-body">
-                                  <h5 class="day2 card-title">Day 2</h5>
-                                  <img src="" alt="weather icon" class="temp-icon-2 my-2">
-                                  <h5 class="temp-num2 card-text">°c</h5>
-                                  <p class="card-text"><i class="fa-solid fa-droplet"></i><span class="humidity-2"></span>%</p>
-                                  <p class="card-text"><i class="fa-solid fa-wind"></i><span class="wind-speed-2"></span>km/h</p>
-                                </div>
-                              </div>
-                            </div>
-
-                            <div class="col">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h5 class="day3 card-title">Day 3</h5>
-                                    <img src="" alt="weather icon" class="temp-icon-3 my-2">
-                                    <h5 class="temp-num3 card-text">°c</h5>
-                                    <p class="card-text"><i class="fa-solid fa-droplet"></i><span class="humidity-3"></span>%</p>
-                                    <p class="card-text"><i class="fa-solid fa-wind"></i><span class="wind-speed-3"></span>km/h</p>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="col">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h5 class="day4 card-title">Day 4</h5>
-                                    <img src="" alt="weather icon" class="temp-icon-4 my-2">
-                                    <h5 class="temp-num4 card-text">°c</h5>
-                                    <p class="card-text"><i class="fa-solid fa-droplet"></i><span class="humidity-4"></span>%</p>
-                                    <p class="card-text"><i class="fa-solid fa-wind"></i><span class="wind-speed-1"></span>km/h</p>
-                                  </div>
-                                </div>
-                              </div>
-
-                              <div class="col">
-                                <div class="card">
-                                  <div class="card-body">
-                                    <h5 class="day5 card-title">Day 5</h5>
-                                    <img src="" alt="weather icon" class="temp-icon-5 my-2">
-                                    <h5 class="temp-num5 card-text">°c</h5>
-                                    <p class="card-text text-left"><i class="fa-solid fa-droplet"></i><span class="humidity-5"></span>%</p>
-                                    <p class="card-text"><i class="fa-solid fa-wind"></i><span class="wind-speed-1"></span>km/h</p>
-                                  </div>
-                                </div>
-                              </div>
-
-                          </div>
-                      </div>
+                        <div class="row" id="forecast-div"></div>
+                    </div>
                 </div>
             </div>
         </div>
