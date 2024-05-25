@@ -5,15 +5,15 @@ const searchBtn = document.querySelector(".input-group button");
 const tempIcon = document.querySelector(".temp-icon");
 
 //if a user uses keyboard "Enter", it will work just like the Click
+searchBtn.addEventListener("click", ()=>{
+    getWeather(searchInput.value);
+    } );
 searchInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
       getWeather(searchInput.value);
-    }else{
-        searchBtn.addEventListener("click", ()=>{
-        getWeather(searchInput.value);
-        } )
     }
   });
+
 
 
 async function getWeather(city){
