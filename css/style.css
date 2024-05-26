@@ -28,9 +28,14 @@ footer{
 }
 .current-data{
     display: none;
+    background: var(--dark-blueish);
 }
 .no-city{
     text-align: left;
     margin-left: 10px;
     display: none;
+}
+.specs{
+
+    margin:0px;
 }
