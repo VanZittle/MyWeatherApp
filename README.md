@@ -1,6 +1,6 @@
 # module6challenge-Vanessa-WeatherApp
 
-This is an app that anyone can reach out to check on weather forecast by adding any city of their interest. The user can get real-time, accurate weather information as well as the next 5 days data. To develop this challenge, I reached out to previous activities during the course, the API weather documentation, the recommended blog in the instructions of the challenge and W3Schools to know how to display the date.
+This is an app that anyone can reach out to check on weather forecast by adding any city of their interest. The user can get real-time, accurate weather information as well as the next 5 days data. To develop this challenge, I reached out to previous activities during the course, the API weather documentation, the recommended blog in the instructions of the challenge, stackoverflow to display the day names, and W3Schools to know how to display the date.
 
 ## User story
 
@@ -21,11 +21,11 @@ THEN I am presented with a 5-day forecast that displays the date, an icon repres
 
 ## Go to my project
 
-To visit and review my project, [click here](https://vanzittle.github.io/module4-challenge-Vanessa-PersonalBlog/)
+To visit and review my project, [click here](https://vanzittle.github.io/module6-challenge-Vanessa-WeatherApp/)
 
 ## Visual reference of project
 The following image demonstrates the app's appearance:
 
-![This app can be run in the browser and features dynamically updated HTML and CSS powered by JavaScript (started from scratch by me, and ended up thanks to my tutor, Katie :D )](./Assets/images/challenge_appReference.gif)
+![This app can be run in the browser and features dynamically updated HTML and CSS powered by JavaScript (started from scratch by me, and ended up thanks to all the research and help form my collegue Rodrigo, Thanks Rod!)](./Assets/images/challenge_appReference.gif)
 
 ![](./Assets/challenge_appReference.gif)
