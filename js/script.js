@@ -14,19 +14,28 @@ searchInput.addEventListener("keypress", function(event) {
       getWeather(searchInput.value);
     }
   });
+// day names
+const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 const renderData = function(dataObj){
     const dataList = dataObj.list;
     console.log(dataList);
     let i = 2;
+    // Clear previous forecast
+    forecastDiv.innerHTML = ""; 
     for (let index = 8; index < dataList.length; index+=8) {
         const weatherObject = dataList[index];
         console.log(dataList[index]); 
+
+        // Calculate the day name
+        const date = new Date(weatherObject.dt_txt);
+        const dayName = dayNames[date.getDay()];
+
         const forecastCard = `
             <div class="col mb-3 mb-sm-0">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="day card-title">Day ${i}</h5>
+                        <h5 class="day card-title">${dayName}</h5>
                         <img src="https://openweathermap.org/img/wn/${weatherObject.weather[0].icon}@2x.png" alt="weather icon" class="temp-icon-3 my-2">
                         <h5 class="temp-num card-text">${weatherObject.main.temp}°c</h5>
                         <p class="card-text"><i class="fa-solid fa-droplet"></i><span class="humidity"> ${weatherObject.main.humidity}</span>%</p>
@@ -46,16 +55,16 @@ const renderData = function(dataObj){
     document.querySelector('.temp-icon').innerHTML = dataList[0].weather.main + " km/h";
 //depending on the information of each city, the weather icon will change
 tempIcon.src = `https://openweathermap.org/img/wn/${dataList[0].weather[0].icon}@2x.png`;
-    if (dataList[0].weather[0].main === "Clouds"){
-    }else if (dataList[0].weather[0].main === "Clear"){
-        tempIcon.src = "assets/clear.svg";
-    }else if (dataList[0].weather[0].main === "Rain"){
-        tempIcon.src = "assets/rain.svg";
-    }else if (dataList[0].weather[0].main === "Drizzle"){
-        tempIcon.src = "assets/rainShowers.svg";
-    }else if (dataList[0].weather[0].main === "Mist"){
-        tempIcon.src = "assets/mist.svg";
-    }
+    // if (dataList[0].weather[0].main === "Clouds"){
+    // }else if (dataList[0].weather[0].main === "Clear"){
+    //     tempIcon.src = "assets/clear.svg";
+    // }else if (dataList[0].weather[0].main === "Rain"){
+    //     tempIcon.src = "assets/rain.svg";
+    // }else if (dataList[0].weather[0].main === "Drizzle"){
+    //     tempIcon.src = "assets/rainShowers.svg";
+    // }else if (dataList[0].weather[0].main === "Mist"){
+    //     tempIcon.src = "assets/mist.svg";
+    // }
     //make first column hide at first, only appears when entering a city
     document.querySelector(".current-data").style.display = "block";
     // //removes the "invalid city name" text if the city is correct
@@ -67,13 +76,13 @@ const getWeather = function (city){
 
     fetch(url)
     .then (function(data){return data.json()})
-    .then (function(obj){renderData(obj)})
+    .then (function(obj){renderData(obj);
+        searchInput.value = '';
+    })
     .catch (function(err){console.log(err)
         // if the city name is not recognized, a message will be displayed
     document.querySelector(".no-city").style.display = "block";
     document.querySelector(".current-data").style.display = "none";
-    searchInput.value = '';
-
     })
     
 }  
