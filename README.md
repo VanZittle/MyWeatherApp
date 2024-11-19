@@ -28,4 +28,4 @@ The following image demonstrates the app's appearance:
 
 ![This app can be run in the browser and features dynamically updated HTML and CSS powered by JavaScript (started from scratch by me, and ended up thanks to all the research and help form my collegue Rodrigo, Thanks Rod!)](./Assets/images/challenge_appReference.gif)
 
-![](./Assets/challenge_appReference.gif)
+![](./assets/challenge_appReference.gif)
