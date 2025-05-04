@@ -66,9 +66,24 @@ tempIcon.src = `https://openweathermap.org/img/wn/${dataList[0].weather[0].icon}
     //     tempIcon.src = "assets/mist.svg";
     // }
     //make first column hide at first, only appears when entering a city
-    document.querySelector(".current-data").style.display = "block";
+    const currentData = document.querySelector(".current-data");
+
+    // Cleans any prev class if there was a prev intent
+    currentData.classList.remove("show");
+
+    // pushes the display so it is active, but invisible at first
+    currentData.style.display = "block";
+
+    // small delay so animation is activated
+    setTimeout(() => {
+    currentData.classList.add("show");
+    }, 50);
+
     // //removes the "invalid city name" text if the city is correct
     document.querySelector(".no-city").style.display = "none";
+    
+    // removes the aligned center once a result is in
+    document.getElementById("main-row").classList.remove("search-only");
 }
 
 const getWeather = function (city){

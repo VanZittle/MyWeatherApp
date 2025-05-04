@@ -6,14 +6,20 @@
     <title>Vanessa's Weather App</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1 class="display-6 text-center p-3 dark-teal">My first weather app</h1>
+    <div class="header-line d-flex align-items-center justify-content-center dark-teal p-3 gap-2">
+        <h1 class="display-6 m-0">SkyScope</h1>
+        <p class="lead slogan m-0 px-2">Your daily weather, clearly in sight.</p>
+      </div>
 
     <div class="m-3 rounded border bg-white">
         <div class="container text-center m-0">
-            <div class="row">
+            <div class="row search-only" id="main-row">
                 <div class="current-data col-md-6 col-lg-5 text-white p-4">
                     <div class="information">
                         <p class="date h4"></p>
@@ -40,21 +46,24 @@
                 </div>
                 <div class="col-md-6 col-lg-7 p-5">
                     <div class="search" id="search">
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Type a city you like" aria-label="Recipient's city" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Get weather</button>
-                          </div>
-                    </div>
+                        <div class="input-group search-group mb-3">
+                          <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                          <input type="text" class="form-control search-input" placeholder="Type a city you like" aria-label="Recipient's city" aria-describedby="button-addon2">
+                          <button class="btn btn-outline-secondary" type="button" id="button-addon2">Get weather</button>
+                        </div>
+                      </div>
                     <div class="no-city"><p>Please add a valid city name</p></div>
                     <div class="container 5-day-weather-content">
-                        <h3 class="lead py-4">Forecast</h3>
-                        <div class="row" id="forecast-div"></div>
+                        
+                        <div class="row" id="forecast-div">
+                            <!-- <h3 class="lead py-4">Forecast</h3> -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer>© Vanessa Zittle 2024</footer>
+    <footer>© Vanessa Zittle 2025</footer>
     <script src="js/script.js"></script>
 </body>
 </html>
